@@ -33,8 +33,21 @@
     <i>Journal of Student Research</i> 10 (1). https://doi.org/10.47611/jsr.v10i1.1171
     <a href = 'CovidResearch.pdf'target="_blank">PDF</a> <a href = 'https://github.com/zzhang-18/Tweet-Analysis' target="_blank">Dataset</a> 
     <a href = "https://twitter.com/Tim_Hua_/status/1385805126343053313?s=20" target = '_blank'>Twitter Thread</a> 
-    <a href = "COVID-19 Tweets Spring Symposium 1.0.pptx">Powerpoint Slide for spring Symposium</a>
+    <a href = "COVID-19 Tweets Spring Symposium 1.0.pptx">Powerpoint Slide for spring Symposium</a> <br> <br>
+
+    <b> &nbsp;&nbsp;&nbsp;&nbsp;<i>Preliminary update:</i></b> I wrote this paper <i>before</i> I had taken econometrics, probability, or statistics. I wrote it before I really learned R and stata. (wild eh?) So the data analysis we conducted was somewhat limited. This is not necessarily a huge deal: we had a census of all tweets from the time period (i.e., we had the population of data), so none of the findings are "wrong." However, in retrospect, there was a lot that I would have done differently. The biggest one among them being that I would have treated each individual user as a unit of observation, as opposed to pooling everything together. <br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp; Heck, if I could figure out how it works, I might even incorporate <a href =  "https://doi.org/10.3982/ECTA12675">Abadie et al (2020)'s</a> work on how to calculate standard errors when I am working with the whole sample. <br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp; For now though, I present the following two randomization inference graphs on the rate at which Republican/Democrat governors mention death or masks in their COVID-19 related tweets. The graph on the left looks at the proportion of COVID-19 related tweets that contained words relating to death; the one on the right looks at the proportion of COVID-19 related tweets that contained the word "mask." We randomize the assignment of party labels. The p-values are 0.001667 and 0.013 respectively. For reference, a similar test with words relating to the economy yields a p-value of 0.883. (As stated in the paper, Democrats mention death and masks in their tweets more than Republicans.)
 </p>
+<div id = 'death' style = 'width:50%;float:left;padding:10px;'>
+    <p><img src = 'deathtweet.png' title = "Death tweet ratio" alt = 'Profile Picture' width="100%"></p>
+</div>
+<div id = 'mask' style = 'width:50%;float:right;padding:10px;'>
+    <p><img src = 'masktweet.png' title = "Mask tweet ratio" alt = 'masktweet.png' width="100%"></p>
+</div>
+
 <!--
 <h4 title  = "I don't count the paper at Brookings where I'm coauthoring yet because...I dunno it feels weird"><i>Ongoing</i></h4>
 <p>
