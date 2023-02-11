@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--I think I'm just going to manually copy paste everything from here-->
+<head>
+    <meta charset = "UTF-8">
+    <p><br></p>
+    <title>Tim Hua Personal Website</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class = 'sepia-theme'>
+    
+    <header id = 'masterheader'>
+        <h1 title = 'YAY I HAVE A WEBSITE'> Tim Hua's Personal Website</h1>
+        <h4 align = 'center' title = 'I wanted to build the whole thing myself so I can learn a little but of HTML/CSS/JS and make my website look extra special'>
+            Last update to this page: May 22, 2022</h4>
+            <table style="width:80%">
+                <tr>
+                    <th><a href = "index.html">Home</a></th>
+                    <th title = "Feels kinda weird to have this on the internet."><a href = 'Resume.pdf' target = "_blank">Resume</a></th>
+                    <th><a href = "research.html"></a>Research</th>
+                    <th title = "VERY INTERESTING PLEASE CLICK"><a href = 'interesting.html'>Interesting Reads</a></th>
+                    <th title = "This is super cool"><a href="OldBooks.html">Old Books</a></th>
+                    <th title = "Such random"><a href = 'random.html'>Random</a></th>
+                </tr>
+            </table>
+    </header>
+    <script src="app.js"></script>
+    <noscript>Enabling Javascript is required to view the full site</noscript>
+<!--To here for the header of every html page. -->
+<h4 title = "S o l o  A u t h o r e d"><i>Writing samples</i></h4>
+<p>Empirical: <a href = "NonresponseBias.pdf" target="_blank">The Link Between Survey Response Rates and Nonresponse Bias: Theory, Simulations, and Empirical Evidence From the Household Pulse Survey</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;This was inspired by the work I had done <a href = "https://www.brookings.edu/research/despair-and-resilience-in-the-us-did-the-covid-pandemic-worsen-mental-health-outcomes/" target="_blank">at Brookings</a>, where we found out about how the Household Pulse Survey is a <i>really terrible survey.</i> I was thinking about what the empirical relationship I see in the data between response rates and depression would be if there is nonresponse bias, and realized that the answer is not immediately obvious. So I put on my theorist hat, drew upon my<a href = "https://www.thecrimson.com/article/2006/9/15/economics-1011a-microeconomic-theory-economics-1011a/" target="_blank"> Ec 1011a</a> knowledge, and wrote down a model for response rates and nonresponse bias, which eventually developed into this paper. 
+</p>
+<p>Theory: <a href = "vooter.pdf" target="_blank"> Axioms and Theorems in Voting Theory with a Brief Biography of Kenneth May.</a> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;I wrote this for the final paper of ECON 1080: Great Theorems of Economics taught by Professor Jerry Green. The class is about 2/3 microeconomic theory topics and 1/3 history of microeconomic theory. I also did a presentation on the subject and the slides <a href = "slides.pdf">can be found here.</a>
+</p>
+
+<h4 title= "Wok Wok"><i>Working Papers</i></h4>
+<p>Dobson, Emily, Carol Graham, Tim Hua, and Sergio Pinto. 2022. “Despair and Resilience in the US: Did the COVID Pandemic Worsen Mental Health Outcomes?” Working Paper 171. Brookings Global Working Paper Series. Brookings Institution. <a href = "https://www.brookings.edu/wp-content/uploads/2022/03/Despair-and-Resilience.pdf" target = "_blank">Brookings WP link</a> </p>
+
+<h4 title= "wohoo I did it"><i>Published</i></h4>
+<p title = "This one is actually not that bad">Hua, Tian., Kim, Chris Chankyo, Zhang, Zihan., & Lyford, Alex. 2021. "COVID-19 Tweets of Governors and Health Experts: Deaths, Masks, and the Economy" 
+    <i>Journal of Student Research</i> 10 (1). https://doi.org/10.47611/jsr.v10i1.1171
+    <a href = 'CovidResearch.pdf'target="_blank">PDF</a> <a href = 'https://github.com/zzhang-18/Tweet-Analysis' target="_blank">Dataset</a> 
+    <a href = "https://twitter.com/Tim_Hua_/status/1385805126343053313?s=20" target = '_blank'>Twitter Thread</a> 
+    <a href = "COVID-19 Tweets Spring Symposium 1.0.pptx">Powerpoint Slide for spring Symposium</a> <br> <br>
+
+    <b> &nbsp;&nbsp;&nbsp;&nbsp;<i>Preliminary update:</i></b> I wrote this paper <i>before</i> I had taken econometrics, probability, or statistics. I wrote it before I really learned R. (Wild eh?) So the data analysis we conducted was somewhat limited. This is not necessarily a huge deal: we had a census of all tweets from the time period (i.e., we had the population of data), so none of the findings are "wrong." However, in retrospect, there was a lot that I would have done differently. The biggest one among them being that I would have treated each individual user as a unit of observation, as opposed to pooling everything together by user category. <br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp; Heck, if I could figure out how it works, I might even incorporate <a href =  "https://doi.org/10.3982/ECTA12675" target="_blank">Abadie et al (2020)'s</a> work. I'm going to be doing an independent study in grad econometrics in the spring and hopefully finally understand this paper. <br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp; For now though, I present the following two randomization inference graphs on the rate at which Republican/Democrat governors mention death or masks in their COVID-19 related tweets. The graph on the left looks at the proportion of COVID-19 related tweets that contained words relating to death; the one on the right looks at the proportion of COVID-19 related tweets that contained the word "mask." We randomize the assignment of party labels. The p-values are 0.001667 and 0.013 respectively, suggesting that the difference between Democrat and Republican governors are, in one sense, statistically significant (i.e., Democrats mention deaths and masks more). For reference, a similar test with words relating to the economy yields a p-value of 0.883. 
+</p>
+<div id = 'death' style = 'width:50%;float:left;padding:10px;'>
+    <p><img src = 'deathtweet.png' title = "Death tweet ratio" alt = 'Profile Picture' width="100%"></p>
+</div>
+<div id = 'mask' style = 'width:50%;float:right;padding:10px;'>
+    <p><img src = 'masktweet.png' title = "Mask tweet ratio" alt = 'masktweet.png' width="100%"></p>
+</div>
+
+<!--
+BONUS PAPER:
+<h4><i>High School</i></h4>
+
+<p>Hua, T. (2018). The Extent to Which Morally Reframed Arguments Are Effective: The Political Animosity in the United States. <a href = "MRA.pdf" target="_blank">PDF</a> <br>
+    I wrote this junior year of high school, and thankfully I'm a much better researcher and writer now. Still, it was the first piece of original research that I produced, 
+    so I thought to leave it here for historical reasons.  Everyone has to start somewhere :)
+
+</p>
+-->
+<h4><i>Small projects</i></h4>
+
+<p><i>These project descriptions are written pretty casually (since the research itself is pretty casual). </i></p>
+
+<p><b><i>Do Last Names Affect Solo-authoriship Rates in Economics? </i></b> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;When I heard from my professor that econ papers almost always list authors based on the alphabetical order of their last name, I thought that those with last names that start later in the alphabet might
+    decide to solo-author more, so that they won't always be lost in the et al's. <br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;I pulled data from Web of Science for every article published in the top five in the past ten years (n = 4680) and looked at the distribution of last names for 
+    co and solo-authored papers. Turns out the difference in the mean last name (A = 1, B = 2, etc.) of authors involved in solo-authored v. coauthored is not that big: 11.57337 for solo authors and 
+    11.36265 for co-authored. These numbers are calculated when I pooled all of the last names in all solo/co-authored papers together, and since this is a census of papers there are no confidence intervals to add. Here are the histograms for those last name pools:
+</p>
+
+<div id = 'Pic1' style = 'width:50%;float:right;padding:10px;'>
+    <p><img src = 'Soloauth.png' title = "Can you tell that I have my own very special ggplot2 theme hehe." alt = 'Profile Picture' width="100%"></p>
+</div>
+<div id = 'Pic2' style = 'width:50%;float:left;padding:10px;'>
+    <p><img src = 'Coauth.png' title = "Can you tell that I have my own very special ggplot2 theme hehe." alt = 'Profile Picture' width="100%"></p>
+</div>
+<p>
+    <i>The problem is that alphabetical discrimination literature has known this problem for a while... I think <a href = "https://doi.org/10.1016/j.frl.2015.05.015" target="_blank"> this guy</a> might have done something on the topic except their paper/methods is
+        <b>better</b>, or <a href = "https://doi.org/10.1093/reseval/rvy008" target="_blank">there's also this paper</a> <a href = "https://pubs.aeaweb.org/doi/pdfplus/10.1257/089533006776526085?utm_campaign=Xavier+van+Leeuwe"
+        target="_blank">or this paper</a>. It was a fun R exercise though. I followed 
+        <a href = "https://doi.org/10.1177/0569434515627089" target = "_blank"> Varian's advice</a> that, especially when I still needed practice doing research, to not do a literature review first so I get to get my hands a bit dirty on a topic I find interesting and get some experience.</i>
+</p>
+
+<p> <b><i>A Productivity-Centered Theory of Time Allocation</i></b>  <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Existing models of time allocation focuses on a work-leisure trade-off subject to money and time constraints, where individuals need to consider both money and time when deciding between leisure, work, 
+    and buying/making at home. I feel like this 
+    really doesn't apply to a lot of people. This is especially true given that nowadays, leisure (Disney+, video games, exercise, online chess) has almost no marginal cost (in terms of money).
+    Also, we know that lots of people find fulfillment in their work or other activities that aren't usually considered leisure such as activism, art, or freelance work. <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Thus, in my model, individuals maximize the <i>amount</i> of fulfilling work (like economics research lol) they get done (I guess you could also call this utility), subject to time and tiredness constraints. 
+    Tiredness here refers to the phenomenon where I get tired after working for a while, and my productivity decreases. To maximize the total amount of work I get done I need to rest. This can be applied to traditional leisure activities as well: I can't go snowboarding all day long because I'll get tired. 
+    So what I have in mind is more akin to the Solow model, where the population (agent) allocates money (time) between consumption (producing fulfilling work now) or investment (sleeping so they will be more productive tomorrow). 
+    The key difference here is that there is no clear functional form for resting (whereas capital next period = capital now + investment - depreciation) and that there is an upper limit to how productive someone can get. 
+    I model that using an "efficiency percentage", where the total amount of work someone gets done over time is the integral of their efficiency percentage over the period of time that they are working, 
+    multiplied by their maximal marginal product of time. <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;However, this is where my thinking sort of ended and I don't know where to go...</i>
+</p>
+
+</body>
+
+<p>
+    <br><br>
+    <br><br><br><br><br><br>
+</p>
