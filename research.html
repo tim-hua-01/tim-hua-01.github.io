@@ -38,6 +38,7 @@
 </p>
 
 <h4 title= "Wok Wok"><i>Working Papers</i></h4>
+<p>Low Wage Gig Sector Increase Wages in Indivisible Labor Monopsony Labor Market</p>
 <p>Dobson, Emily, Carol Graham, Tim Hua, and Sergio Pinto. 2022. “Despair and Resilience in the US: Did the COVID Pandemic Worsen Mental Health Outcomes?” Working Paper 171. Brookings Global Working Paper Series. Brookings Institution. <a href = "https://www.brookings.edu/wp-content/uploads/2022/03/Despair-and-Resilience.pdf" target = "_blank">Brookings WP link</a> </p>
 
 <h4 title= "wohoo I did it"><i>Published</i></h4>
@@ -47,9 +48,7 @@
     <a href = "https://twitter.com/Tim_Hua_/status/1385805126343053313?s=20" target = '_blank'>Twitter Thread</a> 
     <a href = "COVID-19 Tweets Spring Symposium 1.0.pptx">Powerpoint Slide for spring Symposium</a> <br> <br>
 
-    <b> &nbsp;&nbsp;&nbsp;&nbsp;<i>Preliminary update:</i></b> I wrote this paper <i>before</i> I had taken econometrics, probability, or statistics. I wrote it before I really learned R. (Wild eh?) So the data analysis we conducted was somewhat limited. This is not necessarily a huge deal: we had a census of all tweets from the time period (i.e., we had the population of data), so none of the findings are "wrong." However, in retrospect, there was a lot that I would have done differently. The biggest one among them being that I would have treated each individual user as a unit of observation, as opposed to pooling everything together by user category. <br>
-
-    &nbsp;&nbsp;&nbsp;&nbsp; Heck, if I could figure out how it works, I might even incorporate <a href =  "https://doi.org/10.3982/ECTA12675" target="_blank">Abadie et al (2020)'s</a> work. I'm going to be doing an independent study in grad econometrics in the spring and hopefully finally understand this paper. <br>
+    <b> &nbsp;&nbsp;&nbsp;&nbsp;<i>Preliminary update:</i></b> I wrote this paper <i>before</i> I had taken econometrics, probability, or statistics. I wrote it before I really learned R. (Wild eh?) So the data analysis we conducted was somewhat limited. This is not necessarily a huge deal: we had a census of all tweets from the time period, so none of the findings are "wrong." However, in retrospect, there was a lot that I would have done differently. The biggest one among them being that I would have treated each individual user as a unit of observation, as opposed to pooling everything together by user category. <br>
 
     &nbsp;&nbsp;&nbsp;&nbsp; For now though, I present the following two randomization inference graphs on the rate at which Republican/Democrat governors mention death or masks in their COVID-19 related tweets. The graph on the left looks at the proportion of COVID-19 related tweets that contained words relating to death; the one on the right looks at the proportion of COVID-19 related tweets that contained the word "mask." We randomize the assignment of party labels. The p-values are 0.001667 and 0.013 respectively, suggesting that the difference between Democrat and Republican governors are, in one sense, statistically significant (i.e., Democrats mention deaths and masks more). For reference, a similar test with words relating to the economy yields a p-value of 0.883. 
 </p>
@@ -90,23 +89,20 @@ BONUS PAPER:
     <p><img src = 'Coauth.png' title = "Can you tell that I have my own very special ggplot2 theme hehe." alt = 'Profile Picture' width="100%"></p>
 </div>
 <p>
-    <i>The problem is that alphabetical discrimination literature has known this problem for a while... I think <a href = "https://doi.org/10.1016/j.frl.2015.05.015" target="_blank"> this guy</a> might have done something on the topic except their paper/methods is
-        <b>better</b>, or <a href = "https://doi.org/10.1093/reseval/rvy008" target="_blank">there's also this paper</a> <a href = "https://pubs.aeaweb.org/doi/pdfplus/10.1257/089533006776526085?utm_campaign=Xavier+van+Leeuwe"
-        target="_blank">or this paper</a>. It was a fun R exercise though. I followed 
-        <a href = "https://doi.org/10.1177/0569434515627089" target = "_blank"> Varian's advice</a> that, especially when I still needed practice doing research, to not do a literature review first so I get to get my hands a bit dirty on a topic I find interesting and get some experience.</i>
+    <i>The problem is that alphabetical discrimination literature has known this problem for a while... I think <a href = "https://doi.org/10.1016/j.frl.2015.05.015" target="_blank"> this paper</a> is similar and so is <a href = "https://doi.org/10.1093/reseval/rvy008" target="_blank">this one paper</a> <a href = "https://pubs.aeaweb.org/doi/pdfplus/10.1257/089533006776526085?utm_campaign=Xavier+van+Leeuwe"
+        target="_blank">or this paper</a>. I used this mostly as a fun R exercise. </i>
 </p>
 
 <p> <b><i>A Productivity-Centered Theory of Time Allocation</i></b>  <br>
     &nbsp;&nbsp;&nbsp;&nbsp;Existing models of time allocation focuses on a work-leisure trade-off subject to money and time constraints, where individuals need to consider both money and time when deciding between leisure, work, 
     and buying/making at home. I feel like this 
-    really doesn't apply to a lot of people. This is especially true given that nowadays, leisure (Disney+, video games, exercise, online chess) has almost no marginal cost (in terms of money).
-    Also, we know that lots of people find fulfillment in their work or other activities that aren't usually considered leisure such as activism, art, or freelance work. <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Thus, in my model, individuals maximize the <i>amount</i> of fulfilling work (like economics research lol) they get done (I guess you could also call this utility), subject to time and tiredness constraints. 
+    really doesn't apply to a lot of people. This is especially true given that nowadays, a lot of leisure (Disney+, video games, exercise, online chess) has almost no marginal cost (in terms of money).
+    Also, we know that lots of people find fulfillment in their work or other activities that aren't usually considered leisure such as activism or art, where you're producing something, and you gain utility based on what you've produced and not the time spent doing it (whereas in conventional models, spending time on leisure itself is the reward). <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Thus, in my model, individuals maximize the <i>amount</i> of fulfilling work they get done, subject to time and tiredness constraints. 
     Tiredness here refers to the phenomenon where I get tired after working for a while, and my productivity decreases. To maximize the total amount of work I get done I need to rest. This can be applied to traditional leisure activities as well: I can't go snowboarding all day long because I'll get tired. 
-    So what I have in mind is more akin to the Solow model, where the population (agent) allocates money (time) between consumption (producing fulfilling work now) or investment (sleeping so they will be more productive tomorrow). 
+    This is somewhat similar to standard macro models where the population (agent) allocates money (time) between consumption (producing fulfilling work now) or investment (sleeping so they will be more productive tomorrow). 
     The key difference here is that there is no clear functional form for resting (whereas capital next period = capital now + investment - depreciation) and that there is an upper limit to how productive someone can get. 
-    I model that using an "efficiency percentage", where the total amount of work someone gets done over time is the integral of their efficiency percentage over the period of time that they are working, 
-    multiplied by their maximal marginal product of time. <br>
+    I model that using an "efficiency percentage", where the total amount of work someone gets done over time is proportional to the integral of their efficiency percentage over the period of time that they are working. <br>
     &nbsp;&nbsp;&nbsp;&nbsp;However, this is where my thinking sort of ended and I don't know where to go...</i>
 </p>
 
