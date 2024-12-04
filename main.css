@@ -18,9 +18,9 @@ a:hover {
     background-color: rgb(227, 255, 226);
 }
 a:link, a:visited {
-    color:rgb(88, 61, 134)
+    color:rgb(62, 71, 140)
 }
-
+/* rgb(88, 61, 134) */
 .sepia-theme {
     color:rgb(6, 31, 39);
     background-color:rgb(250,237,209);
