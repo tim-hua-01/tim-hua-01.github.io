@@ -1,48 +1,164 @@
 /* This is the css file main.css */
+/* Sepia old-school bones, with some touches borrowed from And-Now's sites
+   (forethought.org, ifp.org, macroscopic.org, emigrantbankfineart.com):
+   light serif headlines, uppercase letter-spaced labels, hairline borders,
+   a burnt-orange accent, and forethought's graph-paper grid. */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..700;1,8..60,200..700&display=swap');
+
+:root {
+    --paper: rgb(250, 240, 218);
+    --ink: rgb(6, 31, 39);
+    --accent: #2d6a4f;
+    --hairline: rgba(6, 31, 39, 0.3);
+    --grid-line: rgba(6, 31, 39, 0.07);
+    --muted: rgba(6, 31, 39, 0.65);
+}
 
 h1 {
     text-align: center;
-    font-family: 'Gill Sans';
-    font-weight: normal; 
-    font-size: xxx-large;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    margin: 0.4em 0 0.5em;
+}
+
+h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.2;
+}
+
+/* Section labels, And-Now style: small, uppercase, tracked out,
+   with a little orange marker like on forethought.org */
+h3, h4, h5 {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    margin-top: 2.2em;
+}
+
+h3 { font-size: 1rem; }
+h4 { font-size: 0.9rem; }
+h5 { font-size: 0.8rem; }
+
+h3::before, h4::before, h5::before {
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: var(--accent);
+    margin-right: 0.6em;
+    vertical-align: 7%;
+}
+
+/* The hidden F O T O joke stays hidden */
+#Profile h4::before, #Contact h4::before, #Bio h4::before {
+    display: none;
 }
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     font-size: large;
-    width:80%;
+    line-height: 1.3;
+    width: 80%;
+    max-width: 1100px;
     margin: auto;
 }
 
+a:link, a:visited {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
 a:hover {
+    text-decoration: none;
     background-color: rgb(227, 255, 226);
 }
-a:link, a:visited {
-    color:rgb(59, 83, 205)
-}
-/* rgb(88, 61, 134) */
+
 .sepia-theme {
-    color:rgb(6, 31, 39);
-    background-color:rgb(250, 240, 218);
+    color: var(--ink);
+    background-color: var(--paper);
+}
+
+/* Dot-grid texture on the header, bleeding to the viewport edges */
+#masterheader {
+    background-image: radial-gradient(circle, rgba(6, 31, 39, 0.22) 1px, transparent 1.5px);
+    background-size: 26px 26px;
+    padding: 1.6em 0 0;
+    margin: 0 calc(50% - 50vw) 1.2em;
+}
+
+/* The nav keeps its trusty table bones, minus the heavy borders.
+   It stays at the content column width while the dots run full-bleed;
+   matching top and bottom rules frame it. */
+#masterheader table {
+    width: 80% !important;
+    max-width: 1100px;
+    border: none;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+}
+#masterheader th {
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.78rem;
+    padding: 12px 6px;
+}
+#masterheader a:link, #masterheader a:visited {
+    text-decoration: none;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid var(--hairline);
     border-collapse: collapse;
     text-align: center;
-    margin-left:auto;
-    margin-right:auto;
-  }
+    margin-left: auto;
+    margin-right: auto;
+}
 
+/* Photo captions: small italic serif, like And-Now's slide captions */
+#Profile p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+/* And-Now style button: hairline outline, uppercase, fills on hover */
+.anniversary-btn {
+    display: inline-block;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    padding: 10px 18px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+a:hover .anniversary-btn {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+}
 
 iframe {
     width: 100%;
     height: 7in;
-    margin:auto;
-    border:none;
+    margin: auto;
+    border: none;
 }
 
 
-*{
+* {
     box-sizing: border-box;
 }
