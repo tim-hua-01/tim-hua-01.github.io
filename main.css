@@ -9,7 +9,7 @@
 :root {
     --paper: rgb(250, 240, 218);
     --ink: rgb(6, 31, 39);
-    --accent: #2d6a4f;
+    --accent: #2a55a0;
     --hairline: rgba(6, 31, 39, 0.3);
     --grid-line: rgba(6, 31, 39, 0.07);
     --muted: rgba(6, 31, 39, 0.65);
@@ -112,6 +112,13 @@ body {
     margin: auto;
 }
 
+/* Selecting text is touching it, and yellow is the touch color here,
+   same as the link hover highlight */
+::selection {
+    background-color: #efc926;
+    color: var(--ink);
+}
+
 a:link, a:visited {
     color: var(--accent);
     text-decoration: underline;
@@ -202,13 +209,15 @@ body:has(#Bio)::after {
 #masterheader th:hover, #masterheader th:hover a {
     color: #fdfaf1;
 }
-#masterheader th:nth-child(2):hover { background-color: #b57edc; }
+#masterheader th:nth-child(2):hover { background-color: #efc926; }
 #masterheader th:nth-child(3):hover { background-color: #2a55a0; }
 #masterheader th:nth-child(4):hover { background-color: #141414; }
-#masterheader th:nth-child(5):hover { background-color: #2a55a0; }
-#masterheader th:nth-child(6):hover { background-color: #efc926; }
+#masterheader th:nth-child(5):hover { background-color: #b57edc; }
+/* Random's green is only the no-JS fallback — app.js rerolls a random
+   color on every hover, as the name demands */
+#masterheader th:nth-child(6):hover { background-color: #2d6a4f; }
 #masterheader th:nth-child(2):hover, #masterheader th:nth-child(2):hover a,
-#masterheader th:nth-child(6):hover, #masterheader th:nth-child(6):hover a {
+#masterheader th:nth-child(5):hover, #masterheader th:nth-child(5):hover a {
     color: #141414;
 }
 
