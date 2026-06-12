@@ -56,8 +56,9 @@ h2 {
     line-height: 1.2;
 }
 
-/* Section labels, And-Now style: small, uppercase, tracked out,
-   with a little orange marker like on forethought.org */
+/* Section labels: small, uppercase, tracked out, each heading level
+   carrying its own instrument in De Stijl primaries — a red-ringed
+   yellow disc, a blue triangle, a tilted red square */
 h3, h4, h5 {
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     font-weight: 600;
@@ -73,11 +74,28 @@ h5 { font-size: 0.8rem; }
 h3::before, h4::before, h5::before {
     content: '';
     display: inline-block;
+    margin-right: 0.6em;
+}
+h3::before {
+    width: 0.62em;
+    height: 0.62em;
+    background-color: #efc926;
+    border: 2.5px solid #cf3c28;
+    border-radius: 50%;
+    vertical-align: -8%;
+}
+h4::before {
+    width: 0;
+    height: 0;
+    border-left: 0.38em solid transparent;
+    border-right: 0.38em solid transparent;
+    border-bottom: 0.66em solid #2a55a0;
+}
+h5::before {
     width: 0.5em;
     height: 0.5em;
-    background-color: var(--accent);
-    margin-right: 0.6em;
-    vertical-align: 7%;
+    background-color: #cf3c28;
+    transform: rotate(45deg);
 }
 
 /* The hidden F O T O joke stays hidden */
@@ -110,6 +128,27 @@ a:hover {
     background-color: var(--paper);
 }
 
+/* The signature seal: 華, stamped in cinnabar at the end of every
+   page, the way a painter closes a scroll. On the home page it
+   closes the Bio column; elsewhere it closes the page. */
+body::after, #Bio::after {
+    content: '華';
+    display: table;
+    clear: both;
+    margin: 3.5em auto 2.5em;
+    font-family: 'Kaiti TC', 'KaiTi', 'STKaiti', 'BiauKai', serif;
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #cf3c28;
+    border: 3px solid #cf3c28;
+    border-radius: 4px;
+    padding: 8px 9px 10px;
+}
+body:has(#Bio)::after {
+    content: none;
+}
+
 #masterheader {
     padding: 1.2em 0 0;
     margin: 0 calc(50% - 50vw) 1.2em;
@@ -128,20 +167,45 @@ a:hover {
     font-weight: 600;
     letter-spacing: 0.04em;
     font-size: 1.02rem;
+    padding: 0;
+}
+
+/* The whole cell is the link, and the text never highlights on its
+   own — the cell fill does all the talking. Some current-page cells
+   carry a stray empty anchor; those count as plain cells. */
+#masterheader th a:not(:empty) {
+    display: block;
+    padding: 10px 6px;
+}
+#masterheader th a:empty {
+    display: none;
+}
+#masterheader th:not(:has(a:not(:empty))) {
     padding: 10px 6px;
 }
 #masterheader a:link, #masterheader a:visited {
     text-decoration: none;
     color: var(--ink);
 }
+#masterheader a:hover {
+    background-color: transparent;
+}
+
+/* Each cell floods its own primary */
 #masterheader th:hover {
     background-color: #cf3c28;
 }
-#masterheader th:hover a, #masterheader th:hover {
+#masterheader th:hover, #masterheader th:hover a {
     color: #fdfaf1;
 }
-#masterheader th:nth-child(even):hover {
-    background-color: #2a55a0;
+#masterheader th:nth-child(2):hover { background-color: #efc926; }
+#masterheader th:nth-child(3):hover { background-color: #2a55a0; }
+#masterheader th:nth-child(4):hover { background-color: #141414; }
+#masterheader th:nth-child(5):hover { background-color: #2a55a0; }
+#masterheader th:nth-child(6):hover { background-color: #efc926; }
+#masterheader th:nth-child(2):hover, #masterheader th:nth-child(2):hover a,
+#masterheader th:nth-child(6):hover, #masterheader th:nth-child(6):hover a {
+    color: #141414;
 }
 
 table, th, td {
