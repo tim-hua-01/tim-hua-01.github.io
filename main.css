@@ -42,10 +42,10 @@ h1 {
 h1::after {
     content: '';
     position: absolute;
-    top: -12px;
-    right: -26px;
-    width: 30px;
-    height: 30px;
+    top: -11px;
+    right: -24px;
+    width: 28px;
+    height: 28px;
     background-color: #2a55a0;
 }
 
@@ -202,7 +202,7 @@ body:has(#Bio)::after {
 #masterheader th:hover, #masterheader th:hover a {
     color: #fdfaf1;
 }
-#masterheader th:nth-child(2):hover { background-color: #efc926; }
+#masterheader th:nth-child(2):hover { background-color: #b57edc; }
 #masterheader th:nth-child(3):hover { background-color: #2a55a0; }
 #masterheader th:nth-child(4):hover { background-color: #141414; }
 #masterheader th:nth-child(5):hover { background-color: #2a55a0; }
@@ -257,4 +257,80 @@ iframe {
 
 * {
     box-sizing: border-box;
+}
+
+/* Mobile: the same composition, folded for small screens. Nothing
+   here touches viewports 768px and up. */
+@media (max-width: 767px) {
+    body {
+        width: 92%;
+        overflow-wrap: break-word;
+    }
+
+    /* Side padding gives the title's overhanging blue square room
+       inside the screen instead of forcing a horizontal scroll */
+    #masterheader {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    /* The title composition, scaled down */
+    h1 {
+        font-size: 1.65rem;
+        border-left-width: 12px;
+        padding: 0.1em 30px 14px 18px;
+        background-size: 82% 4px, 34% 7px;
+        background-position: left 18px bottom 7px, left 18px bottom 0;
+    }
+    h1::after {
+        width: 20px;
+        height: 20px;
+        top: -6px;
+        right: -5px;
+    }
+
+    /* The nav grid folds 1×6 into 3×2; the gap over a black ground
+       keeps every rule a uniform weight */
+    #masterheader table {
+        width: 94% !important;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3px;
+        background-color: #141414;
+    }
+    #masterheader tbody, #masterheader tr {
+        display: contents;
+    }
+    #masterheader th {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        border: none;
+        background-color: #fdfaf1;
+        font-size: 0.88rem;
+        letter-spacing: 0.02em;
+    }
+    #masterheader th a:not(:empty) {
+        flex: 1;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Images never exceed the screen (Old Books pins some at 700px tall) */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    iframe {
+        height: 70vh;
+    }
+
+    /* Old Books: the side-by-side 1891 catalog scans stack */
+    #Pic1, #Pic2 {
+        width: 100% !important;
+        float: none !important;
+    }
 }
