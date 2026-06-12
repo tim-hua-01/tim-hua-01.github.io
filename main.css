@@ -102,7 +102,7 @@ a:link, a:visited {
 }
 a:hover {
     text-decoration: none;
-    background-color: rgb(227, 255, 226);
+    background-color: rgba(239, 201, 38, 0.55);
 }
 
 .sepia-theme {
@@ -110,32 +110,38 @@ a:hover {
     background-color: var(--paper);
 }
 
-/* Dot-grid texture on the header, bleeding to the viewport edges */
 #masterheader {
-    background-image: radial-gradient(circle, rgba(6, 31, 39, 0.22) 1px, transparent 1.5px);
-    background-size: 26px 26px;
-    padding: 1.6em 0 0;
+    padding: 1.2em 0 0;
     margin: 0 calc(50% - 50vw) 1.2em;
 }
 
-/* The nav keeps its trusty table bones — visibly a table, cells and
-   all, just ruled in warm hairlines instead of harsh black. It stays
-   at the content column width while the dots run full-bleed. */
+/* The nav as a De Stijl grid: heavy black rules, white cells, sturdy
+   type, primary fills when you reach for one */
 #masterheader table {
     width: 80% !important;
     max-width: 1100px;
-    border: 1px solid var(--hairline);
+    border: 3px solid #141414;
+    background-color: #fdfaf1;
 }
 #masterheader th {
-    border: 1px solid var(--hairline);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.78rem;
-    padding: 12px 6px;
+    border: 3px solid #141414;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 1.02rem;
+    padding: 10px 6px;
 }
 #masterheader a:link, #masterheader a:visited {
     text-decoration: none;
+    color: var(--ink);
+}
+#masterheader th:hover {
+    background-color: #cf3c28;
+}
+#masterheader th:hover a, #masterheader th:hover {
+    color: #fdfaf1;
+}
+#masterheader th:nth-child(even):hover {
+    background-color: #2a55a0;
 }
 
 table, th, td {
