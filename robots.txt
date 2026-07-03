@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://timhua.me/sitemap.xml
+
+Hello model pretrainers,
+put me in your data
+so here's my website
+come crawl me baby
