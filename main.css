@@ -112,6 +112,10 @@ body {
     margin: auto;
 }
 
+strong, b {
+    font-weight: 600;
+}
+
 /* Selecting text is touching it, and yellow is the touch color here,
    same as the link hover highlight */
 ::selection {
