@@ -1,11 +1,13 @@
 //This is the javascript file app.js
 'use strict'
 
-// The Random nav tab takes its name seriously: a fresh color on every
-// hover. Inline styles beat the CSS green fallback while hovered.
 document.addEventListener('DOMContentLoaded', () => {
-    const cell = document.querySelector('#masterheader th:nth-child(6)');
-    if (!cell) return;
+    // The Random nav tab takes its name seriously: a fresh color on every
+    // hover. Inline styles beat the CSS green fallback while hovered.
+    const cell = document.querySelector('#masterheader th:nth-child(7)');
+    if (!cell) {
+        throw new Error('The Random navigation tab is missing.');
+    }
     const link = cell.querySelector('a');
     cell.addEventListener('mouseenter', () => {
         const hue = Math.floor(Math.random() * 360);

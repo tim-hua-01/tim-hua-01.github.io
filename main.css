@@ -215,13 +215,14 @@ body:has(#Bio)::after {
 }
 #masterheader th:nth-child(2):hover { background-color: #efc926; }
 #masterheader th:nth-child(3):hover { background-color: #2a55a0; }
-#masterheader th:nth-child(4):hover { background-color: #141414; }
-#masterheader th:nth-child(5):hover { background-color: #b57edc; }
+#masterheader th:nth-child(4):hover { background-color: #8b0000; }
+#masterheader th:nth-child(5):hover { background-color: #141414; }
+#masterheader th:nth-child(6):hover { background-color: #b57edc; }
 /* Random's green is only the no-JS fallback — app.js rerolls a random
    color on every hover, as the name demands */
-#masterheader th:nth-child(6):hover { background-color: #2d6a4f; }
+#masterheader th:nth-child(7):hover { background-color: #2d6a4f; }
 #masterheader th:nth-child(2):hover, #masterheader th:nth-child(2):hover a,
-#masterheader th:nth-child(5):hover, #masterheader th:nth-child(5):hover a {
+#masterheader th:nth-child(6):hover, #masterheader th:nth-child(6):hover a {
     color: #141414;
 }
 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Safety Stuff — Tim Hua</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script data-goatcounter="https://timhua.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</head>
+<body class = 'sepia-theme'>
+    <header id = 'masterheader'>
+        <h1 title = 'YAY I HAVE A WEBSITE'> Tim Hua's Personal Website</h1>
+            <table style="width:80%">
+                <tr>
+                    <th><a href = "index.html">Home</a></th>
+                    <th title = "Feels kinda weird to have this on the internet."><a href = 'Resume.pdf' target = "_blank">Resume</a></th>
+                    <th><a href = "research.html">Research</a></th>
+                    <th id="ai-safety-tab">AI Safety Stuff</th>
+                    <th title = "VERY INTERESTING PLEASE CLICK"><a href = 'interesting.html'>Interesting Reads</a></th>
+                    <th title = "This is super cool"><a href="OldBooks.html">Old Books</a></th>
+                    <th title = "Such random"><a href = 'random.html'>Random</a></th>
+                </tr>
+            </table>
+    </header>
+    <script src="app.js"></script>
+    <noscript>Enabling Javascript is needed for some features on the "random" page of the site but the other stuff should work fine</noscript>
+
+<h3>AI Safety Resources</h3>
+
+<p>
+    The <a href="https://arena-chapter0-fundamentals.streamlit.app/" target="_blank">ARENA curriculum</a> is the best intro to technical AI safety research. For a broader overview of the field, the standard class is <a href="https://bluedot.org/courses/alignment" target="_blank">AI Safety Fundamentals</a> from BlueDot. I've also glanced at the <a href="https://www.lesswrong.com/posts/dWQnLi7AoKo3paBXF/the-iliad-intensive-course-materials" target="_blank">Iliad Intensive curriculum</a>, which I think I prefer — it's more x-risk focused, more theoretical, and generally more comprehensive. That said, I'd still recommend the BlueDot class: it's beginner-friendly, and you get to learn alongside an online community. Either way, all the resources from the two courses are available online for you to explore on your own. To get up to speed on empirical alignment research, I recommend Boaz's <a href = "https://boazbk.github.io/mltheoryseminar/" target="_blank">class</a> on AI safety.<br>
+To find opportunities in the field, subscribe to the <a href="https://jobs.80000hours.org/?int_campaign=primary-navigation" target="_blank">80,000 Hours job board</a>. <a href="https://www.aisafety.com" target="_blank">AIsafety.com</a> is also a great resource. On it, you can find updated lists of fellowships, resources, events, and groups.
+</p>
+
+<p>
+    I'm now including a bunch of links to things, but honestly, you don't need to read all of them or even be aware of them to do good work/get started in the field. But there is a lot of lore out there, and I've picked out my personal favorite collection. When I got started I spent a ton of time hungrily going through them and feeling both overwhelmed and fascinated. They can be fun to read, but it's hard to feel like you're making actual progress if you're just reading stuff, so I'd prioritize working through the ARENA curriculum or AI Safety Fundamentals.
+</p>
+
+<p>
+    To get a sense of what people are working on now, <a href="https://www.lesswrong.com/posts/Wti4Wr7Cf5ma3FGWa/shallow-review-of-technical-ai-safety-2025-2" target="_blank">there's an overview post</a> from the end of 2025, and you can also check out what mentors in <a href="https://sparai.org/projects" target="_blank">SPAR</a> and <a href="https://www.matsprogram.org/apply" target="_blank">MATS</a> are interested in. Johannes Gasteiger writes a ~monthly roundup of the best AI safety papers on <a href ="https://aisafetyfrontier.substack.com/" target="_blank">Substack</a>. For video content, the FAR AI <a href = "https://www.youtube.com/@FARAIResearch" target="_blank">YouTube channel</a> has a wide variety of talks on AI safety topics. Neel Nanda also has a <a href = "https://www.youtube.com/@neelnanda2469" target="_blank">YouTube channel</a> about interpretability.
+</p>
+
+<h4>General Places to Check for New Papers</h4>
+<ul>
+    <li><a href="https://alignment.openai.com/" target="_blank">OpenAI alignment research blog</a></li>
+    <li><a href="https://alignment.anthropic.com/" target="_blank">Anthropic alignment research</a></li>
+    <li><a href="https://transformer-circuits.pub/" target="_blank">Anthropic interpretability research</a></li>
+    <li><a href="https://www.alignmentforum.org/" target="_blank">The Alignment Forum</a></li>
+    <li><a href="https://scholar.google.com/citations?hl=en&user=VgJaUK4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Papers from MATS scholars</a></li>
+</ul>
+
+<h4>General Advice Posts for Empirical Research</h4>
+<ul>
+    <li><a href = "https://www.lesswrong.com/posts/dZFpEdKyb9Bf4xYn7/tips-for-empirical-alignment-research" target="_blank">Tips for Empirical Alignment Research</a></li>
+    <li><a href = "https://www.lesswrong.com/posts/i3b9uQfjJjJkwZF4f/tips-on-empirical-research-slides" target="_blank">Tips on Empirical Research Slides</a></li>
+    <li><a href = "https://cs.stanford.edu/~jsteinhardt/ResearchasaStochasticDecisionProcess.html" target="_blank">Research as a Stochastic Decision Process</a></li>
+    <li><a href = "https://www.lesswrong.com/posts/eJGptPbbFPZGLpjsp/highly-opinionated-advice-on-how-to-write-ml-papers" target="_blank">Highly Opinionated Advice on How to Write ML Papers</a></li>
+    <li><a href = "https://www.lesswrong.com/s/5GT3yoYM9gRmMEKqL/p/hjMy4ZxS5ogA9cTYK" target="_blank">How I Think About My Research Process: Explore, Understand, Distill</a></li>
+</ul>
+
+<h4>Current Research Areas</h4>
+<p>Some good overview posts for various subfields:</p>
+
+<ul>
+    <li><strong>Interpretability:</strong> <a href="https://www.lesswrong.com/posts/NfFST5Mio7BCAQHPA/an-extremely-opinionated-annotated-list-of-my-favourite" target="_blank">Neel's favorite interp papers</a>, his <a href="https://tinyurl.com/neel-mats-app" target="_blank">MATS application</a>, and <a href="https://transformer-circuits.pub/2025/attribution-graphs/biology.html" target="_blank">Anthropic's research</a>. See also <a href="https://www.lesswrong.com/posts/J7CyENFYXPxXQpsnD/slt-for-ai-safety" target="_blank">SLT</a>, <a href="https://www.goodfire.ai/research/interpreting-lm-parameters" target="_blank">VPD</a>, and the <a href = "https://arxiv.org/abs/2501.16496" target="_blank">open problems</a> paper.</li>
+    <li><strong>Evaluations:</strong> <a href="https://www.lesswrong.com/posts/LhnqegFoykcjaXCYH/100-concrete-projects-and-open-problems-in-evals" target="_blank">100+ concrete problems in evaluations.</a></li>
+    <li><strong>Control:</strong> <a href="https://www.lesswrong.com/posts/RRxhzshdpneyTzKfq/recent-redwood-research-project-proposals" target="_blank">Redwood Research's control proposals</a>.</li>
+    <li><strong>Oversight:</strong> This <a href="https://alignment.anthropic.com/2025/recommended-directions/#h.9aidfzd51piy" target="_blank">section</a> of an Anthropic post.</li>
+    <li><strong>Agent foundations:</strong> <a href="https://www.lesswrong.com/posts/5tYTKX4pNpiG4vzYg/towards-a-scale-free-theory-of-intelligent-agency" target="_blank">Scale-free theory of intelligent agency</a>, John Wentworth <a href="https://www.lesswrong.com/posts/kJkgXEwQtWLrpecqg/the-plan-2024-update" target="_blank">2024 update</a>.</li>
+</ul>
+
+<h4>Additional Reading</h4>
+<p>
+    There's a lot of literature out there scattered across LessWrong and other places. A hodgepodge of things that I think are worth skimming/reading, in no particular order:
+</p>
+
+<ul>
+    <li><a href="https://www.lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators" target="_blank">Simulators</a></li>
+    <li><a href = "https://www.youtube.com/watch?v=iCz--zrD5CQ" target="_blank">Redwood Research Podcast</a></li>
+    <li><a href="https://www.alignmentforum.org/posts/kcKrE9mzEHrdqtDpE/the-case-for-ensuring-that-powerful-ais-are-controlled" target="_blank">AI Control</a></li>
+    <li><a href="https://gradual-disempowerment.ai/" target="_blank">Gradual Disempowerment</a></li>
+    <li><a href = "https://ai-2027.com/" target="_blank">AI 2027</a> and <a href = "https://ai-2040.com/" target="_blank">2040</a> from the AI futures project</li>
+    <li><a href="https://www.lesswrong.com/posts/GNhMPAWcfBCASy8e6/a-central-ai-alignment-problem-capabilities-generalization" target="_blank">Sharp Left Turn</a></li>
+    <li><a href="https://www.lesswrong.com/posts/GfZfDHZHCuYwrHGCd/without-fundamental-advances-misalignment-and-catastrophe" target="_blank">Misalignment and Catastrophe are default outcomes from Advanced AI</a></li>
+    <li><a href = "https://www.cold-takes.com/ai-could-defeat-all-of-us-combined/" target="_blank">AI Could Defeat All of Us Combined</a></li>
+    <li><a href="https://www.lesswrong.com/posts/YsFZF3K9tuzbfrLxo/counting-arguments-provide-no-evidence-for-ai-doom" target="_blank">Counting arguments provide no evidence for AI doom</a> (especially the comment section!)</li>
+    <li><a href="https://www.lesswrong.com/posts/3jnziqCF3vA2NXAKp/six-thoughts-on-ai-safety" target="_blank">Six thoughts on AI safety</a></li>
+    <li><a href="https://www.anthropic.com/research/alignment-faking" target="_blank">Alignment faking</a></li>
+    <li><a href="https://www.anthropic.com/research/auditing-hidden-objectives" target="_blank">Alignment Auditing</a></li>
+    <li><a href = "https://www.lesswrong.com/posts/FeaJcWkC6fuRAMsfp/the-behavioral-selection-model-for-predicting-ai-motivations-1" target="_blank">Behavioral Selection Model for AI motivations</a></li>
+    <li><a href="https://alignment.anthropic.com/2024/safety-cases/" target="_blank">Sketches of what making a safety case for a super powerful model would actually look like</a></li>
+    <li><a href="https://www.nber.org/papers/w31815" target="_blank">Economic Growth under Transformative AI</a></li>
+    <li><a href = "https://www.anthropic.com/constitution" target="_blank">Claude's Constitution</a></li>
+</ul>
+<p>(Obviously I don't agree with all of these; in fact, they contradict each other)</p>
+
+<h4>Earlier Curricula</h4>
+<p>
+    There are also earlier "overview of AI safety" curricula from <a href="https://docs.google.com/document/d/1HGzMBMXQD9w9K32scqCoSmZNGbxLJE8-siPlonTQz6s/edit?usp=sharing" target="_blank">PIBBSS</a>, <a href="https://docs.google.com/document/d/1mTm_sT2YQx3mRXQD6J2xD2QJG1c3kHyvX8kQc_IQ0ns/edit?tab=t.0#heading=h.dlm795ug69gc" target="_blank">Richard Ngo</a> or <a href="https://docs.google.com/document/d/1IziNp1XHLrv5yKEUqGkGlMkwrxJ2SsfCLawIdFMMfNw/edit?tab=t.0#heading=h.dlm795ug69gc" target="_blank">Eleuther</a> which are more conceptual than empirical. For what it's worth, I think people should read more theory. Even if some of them turn out to be wrong, it's good to think them through.
+</p>
+
+<h4>Readings Outside of Technical AI Safety</h4>
+<p>
+    If we do build safe AGI somehow, there are still lots of ways that the world could be messed up. AGI is a (potentially very concentrated) source of political power, and societies have traditionally handled concentrated sources of power poorly. Here are a variety of people/blogs that I think offer interesting commentary on the non-technical alignment aspects of transformative AI:
+</p>
+<ul>
+    <li><a href="https://www.forethought.org/research/better-futures" target="_blank">Forethought, specifically the better futures project</a></li>
+    <li><a href="https://blog.aifutures.org/" target="_blank">AI futures project blog</a></li>
+    <li><a href="https://x.com/pawtrammell" target="_blank">Phil Trammell</a></li>
+    <li><a href="https://jasmi.news/" target="_blank">Jasmine Sun</a></li>
+    <li><a href="https://epochai.substack.com/" target="_blank">Epoch AI</a></li>
+    <li><a href="https://www.hyperdimensional.co/?utm_campaign=profile_chips" target="_blank">Dean Ball</a></li>
+    <li><a href="https://writing.antonleicht.me/?utm_campaign=profile_chips" target="_blank">Anton Leicht</a></li>
+</ul>
+
+</body>
+</html>
