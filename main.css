@@ -1,8 +1,6 @@
 /* This is the css file main.css */
-/* Sepia old-school bones, with some touches borrowed from And-Now's sites
-   (forethought.org, ifp.org, macroscopic.org, emigrantbankfineart.com):
-   light serif headlines, uppercase letter-spaced labels, hairline borders,
-   a burnt-orange accent, and forethought's graph-paper grid. */
+/* Sepia paper, Gill Sans, and De Stijl primaries.
+   Three main type sizes: body, section headings, and the site title. */
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..700;1,8..60,200..700&display=swap');
 
@@ -23,7 +21,7 @@ h1 {
     text-align: left;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     font-weight: 600;
-    font-size: clamp(2.2rem, 5vw, 3.3rem);
+    font-size: clamp(2rem, 4vw, 2.75rem);
     line-height: 1.15;
     letter-spacing: 0.02em;
     display: table;
@@ -51,30 +49,38 @@ h1::after {
 
 h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    font-weight: 600;
-    font-size: 1.8rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     line-height: 1.2;
 }
 
-/* Section labels: small, uppercase, tracked out, each heading level
-   carrying its own instrument in De Stijl primaries — a red-ringed
-   yellow disc, a blue triangle, a tilted red square */
+/* Spaced capitals and geometric marks give sections their old-school voice. */
 h3, h4, h5 {
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.13em;
-    margin-top: 2.2em;
+    letter-spacing: 0.1em;
+    margin-top: 1.6em;
 }
 
-h3 { font-size: 1rem; }
-h4 { font-size: 0.9rem; }
-h5 { font-size: 0.8rem; }
+h3, h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
 
-h3::before, h4::before, h5::before {
+/* No underlines on headings: on a site where every link is underlined,
+   an underlined heading reads as a dead link. The marks do the work
+   instead — one shape per level: square, circle, triangle, diamond. */
+h2::before, h3::before, h4::before, h5::before {
     content: '';
     display: inline-block;
     margin-right: 0.6em;
+}
+h2::before {
+    width: 0.62em;
+    height: 0.62em;
+    background-color: #141414;
+    vertical-align: -2%;
 }
 h3::before {
     width: 0.62em;
@@ -105,11 +111,15 @@ h5::before {
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    font-size: large;
-    line-height: 1.3;
+    font-size: 1.125rem;
+    line-height: 1.4;
     width: 80%;
     max-width: 1100px;
     margin: auto;
+}
+
+p {
+    margin: 0.8em 0;
 }
 
 strong, b {
@@ -162,7 +172,7 @@ body:has(#Bio)::after {
 
 #masterheader {
     padding: 1.5em 0 0;
-    margin: 0 calc(50% - 50vw) 1.2em;
+    margin: 0 calc(50% - 50vw) 2.8rem;
 }
 
 /* The nav as a De Stijl grid: heavy black rules, white cells, sturdy
@@ -170,14 +180,15 @@ body:has(#Bio)::after {
 #masterheader table {
     width: 80% !important;
     max-width: 1100px;
-    border: 3px solid #141414;
+    border: 2px solid #141414;
     background-color: #fdfaf1;
 }
 #masterheader th {
-    border: 3px solid #141414;
+    border: 2px solid #141414;
     font-weight: 600;
     letter-spacing: 0.04em;
-    font-size: 1.02rem;
+    font-size: 1.125rem;
+    line-height: 1.3;
     padding: 0;
 }
 
@@ -200,6 +211,11 @@ body:has(#Bio)::after {
 }
 #masterheader a:hover {
     background-color: transparent;
+}
+
+/* The selected tab keeps its pale yellow fill between hovers, on every page. */
+#masterheader th[aria-current="page"]:not(:hover) {
+    background-color: #f9edc4;
 }
 
 /* Each cell floods its own primary */
@@ -230,12 +246,19 @@ table, th, td {
     margin-right: auto;
 }
 
-/* Photo captions: small italic serif, like And-Now's slide captions */
+/* The photo caption keeps its italic serif voice at the body size. */
 #Profile p {
     font-family: 'Source Serif 4', Georgia, serif;
     font-style: italic;
-    font-size: 0.95rem;
+    font-size: inherit;
     color: var(--muted);
+}
+
+/* Book scans keep their intended height but also fit tablet-width pages. */
+img[height="700"] {
+    max-width: 100%;
+    max-height: 700px;
+    height: auto;
 }
 
 iframe {
@@ -263,10 +286,13 @@ iframe {
     #masterheader {
         padding-left: 14px;
         padding-right: 14px;
+        margin-bottom: 2rem;
     }
 
     /* The title composition, scaled down */
     h1 {
+        display: block;
+        max-width: 100%;
         font-size: 1.65rem;
         border-left-width: 12px;
         padding: 0.1em 30px 14px 18px;
@@ -280,13 +306,12 @@ iframe {
         right: -5px;
     }
 
-    /* The nav grid folds 1×6 into 3×2; the gap over a black ground
-       keeps every rule a uniform weight */
+    /* Home sits above three pairs of destinations on every page. */
     #masterheader table {
         width: 94% !important;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2px;
         background-color: #141414;
     }
     #masterheader tbody, #masterheader tr {
@@ -299,8 +324,10 @@ iframe {
         margin: 0;
         border: none;
         background-color: #fdfaf1;
-        font-size: 0.88rem;
         letter-spacing: 0.02em;
+    }
+    #masterheader th:first-child {
+        grid-column: 1 / -1;
     }
     #masterheader th a:not(:empty) {
         flex: 1;
@@ -323,5 +350,140 @@ iframe {
     #Pic1, #Pic2 {
         width: 100% !important;
         float: none !important;
+    }
+}
+
+/* Homepage: a photo/contact sidebar and a roomy column of writing. */
+.home-layout {
+    display: grid;
+    grid-template-columns: minmax(210px, 260px) minmax(0, 1fr);
+    grid-template-areas:
+        "sidebar intro"
+        "sidebar work"
+        "sidebar background"
+        ". seal";
+    column-gap: clamp(2rem, 5vw, 4.5rem);
+    row-gap: 2rem;
+    align-items: start;
+}
+
+.home-sidebar { grid-area: sidebar; }
+.home-intro { grid-area: intro; }
+.selected-work { grid-area: work; }
+.home-background { grid-area: background; }
+
+.home-page #Bio::after {
+    grid-area: seal;
+    margin: 0 auto 2.5rem;
+}
+
+.home-layout p {
+    margin: 0 0 0.75em;
+}
+
+.home-layout p:last-child {
+    margin-bottom: 0;
+}
+
+/* Homepage section labels: the h2 square, but each section gets its
+   own primary — red, blue, yellow, black. */
+.home-page .section-label {
+    margin: 0 0 0.8rem;
+    text-align: left;
+    font-size: 1.3rem;
+}
+.home-page #bio-heading::before { background-color: #cf3c28; }
+.home-page #work-heading::before { background-color: #2a55a0; }
+.home-page #Contact .section-label::before { background-color: #efc926; }
+.home-page #background-heading::before { background-color: #141414; }
+
+.home-page #Profile {
+    position: relative;
+}
+
+/* Keep the hidden photo label without reserving an empty heading row. */
+.home-page #Profile h4 {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.home-page #Profile img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.home-page #Profile p {
+    margin-top: 0.7rem;
+}
+
+.home-page #Contact {
+    margin-top: 2.3rem;
+    overflow-wrap: anywhere;
+}
+
+.home-page #Contact ul {
+    padding-left: 1.1em;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.home-page #Contact li {
+    margin-bottom: 0.1em;
+}
+
+.work-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.work-list > li + li {
+    margin-top: 1.1em;
+}
+
+.home-page .work-title {
+    font-size: inherit;
+    font-weight: 600;
+    line-height: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+    margin: 0;
+}
+
+.home-page .work-title::before {
+    content: none;
+}
+
+.home-page .work-authors {
+    margin-bottom: 0.5rem;
+}
+
+.home-page .work-summary {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+    .home-layout {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "intro" "profile" "contact" "work" "background" "seal";
+        row-gap: 2rem;
+    }
+
+    .home-sidebar {
+        display: contents;
+    }
+
+    .home-page #Profile {
+        grid-area: profile;
+        width: min(100%, 300px);
+        justify-self: center;
+    }
+
+    .home-page #Contact {
+        grid-area: contact;
+        margin: 0;
     }
 }
