@@ -217,6 +217,9 @@ body:has(#Bio)::after {
 #masterheader th[aria-current="page"]:not(:hover) {
     background-color: #f9edc4;
 }
+#masterheader th#ai-safety-tab[aria-current="page"]:not(:hover) {
+    background-color: #f3d6d0;
+}
 
 /* Each cell floods its own primary */
 #masterheader th:hover {
