@@ -1,0 +1,570 @@
+/* This is the css file main.css */
+/* Sepia paper, Gill Sans, and De Stijl primaries.
+   Three main type sizes: body, section headings, and the site title. */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..700;1,8..60,200..700&display=swap');
+
+:root {
+    --paper: rgb(251, 243, 226);
+    --ink: rgb(6, 31, 39);
+    --accent: #2a55a0;
+    --hairline: rgba(6, 31, 39, 0.3);
+    --grid-line: rgba(6, 31, 39, 0.07);
+    --muted: rgba(6, 31, 39, 0.65);
+}
+
+/* De Stijl title: no box, just an asymmetric composition — a red
+   bar holding up the left, a black rule running underneath partway,
+   a yellow segment below that, and a blue square floating off the
+   top right corner */
+h1 {
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    display: table;
+    position: relative;
+    margin: 0.5em auto 0.6em;
+    border-left: 16px solid #cf3c28;
+    padding: 0.1em 0.5em 18px 26px;
+    background-image:
+        linear-gradient(#141414, #141414),
+        linear-gradient(#efc926, #efc926);
+    background-size: 82% 5px, 34% 9px;
+    background-position: left 26px bottom 9px, left 26px bottom 0;
+    background-repeat: no-repeat;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    top: -11px;
+    right: -24px;
+    width: 28px;
+    height: 28px;
+    background-color: #2a55a0;
+}
+
+h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+}
+
+/* Spaced capitals and geometric marks give sections their old-school voice. */
+h3, h4, h5 {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 1.6em;
+}
+
+h3, h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+
+/* No underlines on headings: on a site where every link is underlined,
+   an underlined heading reads as a dead link. The marks do the work
+   instead — one shape per level: square, circle, triangle, diamond. */
+h2::before, h3::before, h4::before, h5::before {
+    content: '';
+    display: inline-block;
+    margin-right: 0.6em;
+}
+h2::before {
+    width: 0.62em;
+    height: 0.62em;
+    background-color: #141414;
+    vertical-align: -2%;
+}
+h3::before {
+    width: 0.62em;
+    height: 0.62em;
+    background-color: #efc926;
+    border: 2.5px solid #cf3c28;
+    border-radius: 50%;
+    vertical-align: -8%;
+}
+h4::before {
+    width: 0;
+    height: 0;
+    border-left: 0.38em solid transparent;
+    border-right: 0.38em solid transparent;
+    border-bottom: 0.66em solid #2a55a0;
+}
+h5::before {
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #cf3c28;
+    transform: rotate(45deg);
+}
+
+/* The hidden F O T O joke stays hidden */
+#Profile h4::before, #Contact h4::before, #Bio h4::before {
+    display: none;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+p {
+    margin: 0.8em 0;
+}
+
+strong, b {
+    font-weight: 600;
+}
+
+/* Selecting text is touching it, and yellow is the touch color here,
+   same as the link hover highlight */
+::selection {
+    background-color: #efc926;
+    color: var(--ink);
+}
+
+a:link, a:visited {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+a:hover {
+    text-decoration: none;
+    background-color: rgba(239, 201, 38, 0.55);
+}
+
+.sepia-theme {
+    color: var(--ink);
+    background-color: var(--paper);
+}
+
+/* The signature seal: 華, stamped in cinnabar at the end of every
+   page, the way a painter closes a scroll. On the home page it
+   closes the Bio column; elsewhere it closes the page. */
+body::after, #Bio::after {
+    content: '華';
+    display: table;
+    clear: both;
+    margin: 3.5em auto 2.5em;
+    font-family: 'Kaiti TC', 'KaiTi', 'STKaiti', 'BiauKai', serif;
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #cf3c28;
+    border: 3px solid #cf3c28;
+    border-radius: 4px;
+    padding: 8px 9px 10px;
+}
+body:has(#Bio)::after {
+    content: none;
+}
+
+#masterheader {
+    padding: 1.5em 0 0;
+    margin: 0 calc(50% - 50vw) 2.8rem;
+}
+
+/* The nav as a De Stijl grid: heavy black rules, white cells, sturdy
+   type, primary fills when you reach for one */
+#masterheader table {
+    width: 80% !important;
+    max-width: 1100px;
+    border: 2px solid #141414;
+    background-color: #fdfaf1;
+}
+#masterheader th {
+    border: 2px solid #141414;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    padding: 0;
+}
+
+/* The whole cell is the link, and the text never highlights on its
+   own — the cell fill does all the talking. Some current-page cells
+   carry a stray empty anchor; those count as plain cells. */
+#masterheader th a:not(:empty) {
+    display: block;
+    padding: 10px 6px;
+}
+#masterheader th a:empty {
+    display: none;
+}
+#masterheader th:not(:has(a:not(:empty))) {
+    padding: 10px 6px;
+}
+#masterheader a:link, #masterheader a:visited {
+    text-decoration: none;
+    color: var(--ink);
+}
+#masterheader a:hover {
+    background-color: transparent;
+}
+
+/* The selected tab keeps its pale yellow fill between hovers, on every page. */
+#masterheader th[aria-current="page"]:not(:hover) {
+    background-color: #f9edc4;
+}
+#masterheader th#ai-safety-tab[aria-current="page"]:not(:hover) {
+    background-color: #f3d6d0;
+}
+
+/* Each cell floods its own primary */
+#masterheader th:hover {
+    background-color: #cf3c28;
+}
+#masterheader th:hover, #masterheader th:hover a {
+    color: #fdfaf1;
+}
+#masterheader th:nth-child(2):hover { background-color: #efc926; }
+#masterheader th:nth-child(3):hover { background-color: #2a55a0; }
+#masterheader th:nth-child(4):hover { background-color: #8b0000; }
+#masterheader th:nth-child(5):hover { background-color: #141414; }
+#masterheader th:nth-child(6):hover { background-color: #b57edc; }
+/* Random's green is only the no-JS fallback — app.js rerolls a random
+   color on every hover, as the name demands */
+#masterheader th:nth-child(7):hover { background-color: #2d6a4f; }
+#masterheader th:nth-child(2):hover, #masterheader th:nth-child(2):hover a,
+#masterheader th:nth-child(6):hover, #masterheader th:nth-child(6):hover a {
+    color: #141414;
+}
+
+table, th, td {
+    border: 1px solid var(--hairline);
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* The photo caption keeps its italic serif voice at the body size. */
+#Profile p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-size: inherit;
+    color: var(--muted);
+}
+
+/* Book scans keep their intended height but also fit tablet-width pages. */
+img[height="700"] {
+    max-width: 100%;
+    max-height: 700px;
+    height: auto;
+}
+
+/* Hovering a link to a photo shows it as a small plate: matted in
+   nav-cell cream, black rule, and a hard shadow in the Old Books
+   tab's lavender (app.js does the placing) */
+.link-preview {
+    position: fixed;
+    z-index: 10;
+    max-width: 280px;
+    max-height: 280px;
+    padding: 6px;
+    background-color: #fdfaf1;
+    border: 2px solid #141414;
+    box-shadow: 6px 6px 0 #b57edc;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 120ms ease-out, visibility 0s 120ms;
+}
+.link-preview.shown {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 120ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+    .link-preview, .link-preview.shown {
+        transition: none;
+    }
+}
+
+/* Hover text is a slip of library card that hugs the words: ruled in faint
+   blue with a red margin. The shadow is yellow because yellow is the touch
+   color here (app.js does the placing) */
+.hover-card {
+    --rule: 1.4rem;
+    --margin: 0.5rem;
+    --top: 0.15rem;
+    position: fixed;
+    z-index: 20;
+    box-sizing: border-box;
+    width: max-content;
+    max-width: min(22rem, calc(100vw - 16px));
+    padding: var(--top) 0.6rem 0.2rem calc(var(--margin) + 0.45rem);
+    white-space: pre-line;
+    font-family: 'American Typewriter', 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    line-height: var(--rule);
+    color: var(--ink);
+    background-color: #fdfaf1;
+    background-image: repeating-linear-gradient(transparent 0 calc(var(--rule) - 1px),
+        rgba(42, 85, 160, 0.22) calc(var(--rule) - 1px) var(--rule));
+    background-position: 0 calc(var(--top) - 0.2rem);
+    border: 1.5px solid #141414;
+    box-shadow: 3px 3px 0 #efc926;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 120ms ease-out, visibility 0s 120ms;
+}
+.hover-card.shown {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 120ms ease-out;
+}
+/* the red margin rule */
+.hover-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--margin);
+    width: 1.5px;
+    background-color: #cf3c28;
+}
+@media (prefers-reduced-motion: reduce) {
+    .hover-card, .hover-card.shown {
+        transition: none;
+    }
+}
+
+iframe {
+    width: 100%;
+    height: 7in;
+    margin: auto;
+    border: none;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* Mobile: the same composition, folded for small screens. Nothing
+   here touches viewports 768px and up. */
+@media (max-width: 767px) {
+    body {
+        width: 92%;
+        overflow-wrap: break-word;
+    }
+
+    /* Side padding gives the title's overhanging blue square room
+       inside the screen instead of forcing a horizontal scroll */
+    #masterheader {
+        padding-left: 14px;
+        padding-right: 14px;
+        margin-bottom: 2rem;
+    }
+
+    /* The title composition, scaled down */
+    h1 {
+        display: block;
+        max-width: 100%;
+        font-size: 1.65rem;
+        border-left-width: 12px;
+        padding: 0.1em 30px 14px 18px;
+        background-size: 82% 4px, 34% 7px;
+        background-position: left 18px bottom 7px, left 18px bottom 0;
+    }
+    h1::after {
+        width: 20px;
+        height: 20px;
+        top: -6px;
+        right: -5px;
+    }
+
+    /* Home sits above three pairs of destinations on every page. */
+    #masterheader table {
+        width: 94% !important;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2px;
+        background-color: #141414;
+    }
+    #masterheader tbody, #masterheader tr {
+        display: contents;
+    }
+    #masterheader th {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        border: none;
+        background-color: #fdfaf1;
+        letter-spacing: 0.02em;
+    }
+    #masterheader th:first-child {
+        grid-column: 1 / -1;
+    }
+    #masterheader th a:not(:empty) {
+        flex: 1;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Images never exceed the screen (Old Books pins some at 700px tall) */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    iframe {
+        height: 70vh;
+    }
+
+    /* Old Books: the side-by-side 1891 catalog scans stack */
+    #Pic1, #Pic2 {
+        width: 100% !important;
+        float: none !important;
+    }
+}
+
+/* Homepage: a photo/contact sidebar and a roomy column of writing. */
+.home-layout {
+    display: grid;
+    grid-template-columns: minmax(210px, 260px) minmax(0, 1fr);
+    grid-template-areas:
+        "sidebar intro"
+        "sidebar work"
+        "sidebar background"
+        ". seal";
+    column-gap: clamp(2rem, 5vw, 4.5rem);
+    row-gap: 2rem;
+    align-items: start;
+}
+
+.home-sidebar { grid-area: sidebar; }
+.home-intro { grid-area: intro; }
+.selected-work { grid-area: work; }
+.home-background { grid-area: background; }
+
+.home-page #Bio::after {
+    grid-area: seal;
+    margin: 0 auto 2.5rem;
+}
+
+.home-layout p {
+    margin: 0 0 0.75em;
+}
+
+.home-layout p:last-child {
+    margin-bottom: 0;
+}
+
+/* Homepage section labels: the h2 square, but each section gets its
+   own primary — red, blue, yellow, black. */
+.home-page .section-label {
+    margin: 0 0 0.8rem;
+    text-align: left;
+    font-size: 1.3rem;
+}
+.home-page #bio-heading::before { background-color: #cf3c28; }
+.home-page #work-heading::before { background-color: #2a55a0; }
+.home-page #Contact .section-label::before { background-color: #efc926; }
+.home-page #background-heading::before { background-color: #141414; }
+
+.home-page #Profile {
+    position: relative;
+}
+
+/* Keep the hidden photo label without reserving an empty heading row. */
+.home-page #Profile h4 {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.home-page #Profile img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.home-page #Profile p {
+    margin-top: 0.7rem;
+}
+
+.home-page #Contact {
+    margin-top: 2.3rem;
+    overflow-wrap: anywhere;
+}
+
+.home-page #Contact ul {
+    padding-left: 1.1em;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.home-page #Contact li {
+    margin-bottom: 0.1em;
+}
+
+.work-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.work-list > li + li {
+    margin-top: 1.1em;
+}
+
+.home-page .work-title {
+    font-size: inherit;
+    font-weight: 600;
+    line-height: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+    margin: 0;
+}
+
+.home-page .work-title::before {
+    content: none;
+}
+
+.home-page .work-authors {
+    margin-bottom: 0.5rem;
+}
+
+.home-page .work-summary {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+    .home-layout {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "intro" "profile" "contact" "work" "background" "seal";
+        row-gap: 2rem;
+    }
+
+    .home-sidebar {
+        display: contents;
+    }
+
+    .home-page #Profile {
+        grid-area: profile;
+        width: min(100%, 300px);
+        justify-self: center;
+    }
+
+    .home-page #Contact {
+        grid-area: contact;
+        margin: 0;
+    }
+}
